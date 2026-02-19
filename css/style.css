@@ -177,3 +177,126 @@ body::before {
 .btn-secondary:hover {
     background-color: #e6e6e6;
 }
+
+.historico-hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("CAMINHO-IMAGEM-FUNDO.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 70px 20px;
+    text-align: center;
+    color: white;
+}
+
+.historico-hero h1 {
+    font-family: 'Archivo Black', sans-serif;
+    margin-bottom: 40px;
+}
+
+/* CARDS */
+
+.historico-resumo {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.resumo-card {
+    background: #ffffff;
+    color: black;
+    padding: 20px 40px;
+    border-radius: 25px;
+    min-width: 220px;
+}
+
+.resumo-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.resumo-top img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+.resumo-card span {
+    font-size: 14px;
+    color: gray;
+}
+
+.resumo-card h2 {
+    margin-top: 8px;
+    font-size: 28px;
+}
+
+/* ================= LISTA ================= */
+
+.historico-lista {
+    padding: 50px 80px;
+    color: white;
+}
+
+.historico-lista h2 {
+    font-family: 'Archivo Black', sans-serif;
+    margin-bottom: 20px;
+}
+
+.compra-item {
+    background: #f1f1f1;
+    padding: 20px 30px;
+    border-radius: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.compra-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.compra-icon {
+    width: 55px;   /* mantém tamanho da área */
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.compra-icon img {
+    width: 40px;   /* ícone maior */
+    height: 40px;
+    object-fit: contain;
+}
+
+
+
+.compra-info strong {
+    font-size: 16px;
+    color: black;
+}
+
+.compra-info p {
+    font-size: 13px;
+    color: gray;
+    margin-top: 4px;
+}
+
+.compra-valor {
+    text-align: right;
+}
+
+.compra-valor strong {
+    color: #00a651;
+    display: block;
+}
+
+.compra-valor span {
+    color: #f2b705;
+    font-size: 13px;
+}
