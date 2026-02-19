@@ -4,8 +4,6 @@
     box-sizing: border-box;
 }
 
-
-
 body {
     font-family: 'Archivo Black', sans-serif;
     background-image: url("../img/cafefundo.png");
@@ -21,7 +19,6 @@ body::before {
     background: rgba(0, 0, 0, 0.6);
     z-index: -1;
 }
-
 
 .navbar {
     display: flex;
@@ -60,6 +57,7 @@ body::before {
 .nav-item.active {
     background-color: #f2b705;
 }
+
 .nav-logo {
     display: flex;
     align-items: center;
@@ -70,7 +68,6 @@ body::before {
     height: 40px;
     object-fit: contain;
 }
-
 
 .profile-icon {
     width: 40px;
@@ -85,9 +82,6 @@ body::before {
     height: 100%;
     object-fit: cover;
 }
-
-
-
 
 .hero {
     position: relative;
@@ -105,7 +99,6 @@ body::before {
     color: white;
 }
 
-
 .top-info {
     display: flex;
     align-items: center;
@@ -118,8 +111,8 @@ body::before {
 .circle-icon img {
     width: 10%;
     height: 10%;
-    
 }
+
 /* Título */
 .hero h1 {
     font-family: 'Archivo Black', sans-serif;
@@ -194,7 +187,6 @@ body::before {
 }
 
 /* CARDS */
-
 .historico-resumo {
     display: flex;
     justify-content: center;
@@ -233,7 +225,6 @@ body::before {
 }
 
 /* ================= LISTA ================= */
-
 .historico-lista {
     padding: 50px 80px;
     color: white;
@@ -261,7 +252,7 @@ body::before {
 }
 
 .compra-icon {
-    width: 55px;   /* mantém tamanho da área */
+    width: 55px;
     height: 55px;
     display: flex;
     align-items: center;
@@ -269,12 +260,10 @@ body::before {
 }
 
 .compra-icon img {
-    width: 40px;   /* ícone maior */
+    width: 40px;
     height: 40px;
     object-fit: contain;
 }
-
-
 
 .compra-info strong {
     font-size: 16px;
