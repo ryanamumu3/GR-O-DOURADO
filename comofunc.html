@@ -5,33 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grão Dourado - Como Funciona</title>
 
-    
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Seu CSS personalizado -->
     <link rel="stylesheet" href="css/stykecomofunc.css">
 </head>
-
 <body>
 
-    
-     <nav class="navbar">
+    <!-- Navbar original mantida -->
+    <nav class="navbar">
         <div class="nav-left">
             <div class="nav-logo">
-    <img src="img/icone (2)/1-photoaidcom-cropped.png" alt="Ícone Café">
-</div>
+                <img src="img/icone (2)/1-photoaidcom-cropped.png" alt="Ícone Café">
+            </div>
             <a href="index.html" class="nav-item active">Inicio</a>
             <a href="#" class="nav-item">Recompensas</a>
             <a href="historico.html" class="nav-item">Histórico</a>
             <a href="comofunc.html" class="nav-item">Como funciona</a>
         </div>
         <div class="nav-right">
-            <div class="profile-icon"><a href="login.html"><img src="img\icone (2)\5.png" alt="perfil"></a></div>
+            <div class="profile-icon"><a href="login.html"><img src="img/icone (2)/5.png" alt="perfil"></a></div>
         </div>
     </nav>
 
-    
-    <section class="hero-funciona">
-        <div class="hero-content">
+    <!-- Hero -->
+    <section class="hero-funciona d-flex align-items-center justify-content-center text-center">
+        <div class="hero-content px-3">
             <h2>Como Funciona</h2>
             <p>
                 Descubra como acumular pontos e aproveitar benefícios exclusivos
@@ -40,131 +43,145 @@
         </div>
     </section>
 
-    
-    <section class="steps">
-        <div class="steps-container">
+    <!-- Steps / Passos responsivos -->
+    <section class="steps py-5 bg-white">
+        <div class="container">
+            <div class="row justify-content-center text-center g-4">
 
-            <div class="step">
-                <div class="icon-box">
-                    <img src="img/icone (2)/7.png" alt="Café">
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="step">
+                        <div class="icon-box mb-3">
+                            <img src="img/icone (2)/7.png" alt="Café" class="img-fluid">
+                        </div>
+                        <span class="step-number">Passo 1</span>
+                        <h3>Faça suas compras</h3>
+                        <p>Peça seu café favorito ou qualquer item do nosso cardápio.</p>
+                    </div>
                 </div>
-                <span class="step-number">Passo 1</span>
-                <h3>Faça suas compras</h3>
-                <p>Peça seu café favorito ou qualquer item do nosso cardápio.</p>
-            </div>
 
-            <div class="arrow">→</div>
-
-            <div class="step">
-                <div class="icon-box">
-                    <img src="img/icone (2)/icone.png" alt="Pontos">
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="step">
+                        <div class="icon-box mb-3">
+                            <img src="img/icone (2)/icone.png" alt="Pontos" class="img-fluid">
+                        </div>
+                        <span class="step-number">Passo 2</span>
+                        <h3>Acumule pontos</h3>
+                        <p>A cada R$10 em compras, você ganha 10 pontos automaticamente.</p>
+                    </div>
                 </div>
-                <span class="step-number">Passo 2</span>
-                <h3>Acumule pontos</h3>
-                <p>A cada R$10 em compras, você ganha 10 pontos automaticamente.</p>
-            </div>
 
-            <div class="arrow">→</div>
-
-            <div class="step">
-                <div class="icon-box">
-                    <img src="img/icone (2)/7.png" alt="Voucher">
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="step">
+                        <div class="icon-box mb-3">
+                            <img src="img/icone (2)/7.png" alt="Voucher" class="img-fluid">
+                        </div>
+                        <span class="step-number">Passo 3</span>
+                        <h3>Resgate vouchers</h3>
+                        <p>Use seus pontos para desbloquear vouchers com descontos exclusivos.</p>
+                    </div>
                 </div>
-                <span class="step-number">Passo 3</span>
-                <h3>Resgate vouchers</h3>
-                <p>Use seus pontos para desbloquear vouchers com descontos exclusivos.</p>
-            </div>
 
-            <div class="arrow">→</div>
-
-            <div class="step">
-                <div class="icon-box">
-                    <img src="img/icone (2)/icone (2).png" alt="Trofeu">
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="step">
+                        <div class="icon-box mb-3">
+                            <img src="img/icone (2)/icone (2).png" alt="Trofeu" class="img-fluid">
+                        </div>
+                        <span class="step-number">Passo 4</span>
+                        <h3>Suba de nível</h3>
+                        <p>Evolua do Bronze ao Diamante e desbloqueie benefícios ainda melhores.</p>
+                    </div>
                 </div>
-                <span class="step-number">Passo 4</span>
-                <h3>Suba de nível</h3>
-                <p>Evolua do Bronze ao Diamante e desbloqueie benefícios ainda melhores.</p>
-            </div>
 
+            </div>
         </div>
     </section>
 
-    
-    <section class="niveis">
-        <div class="niveis-header">
-            <h2 style="color: #FFF;">Níveis de Fidelidade</h2>
-            <p style="color: #FFF;">Quanto mais você compra, mais benefícios você desbloqueia</p>
-        </div>
-
-        <div class="niveis-container">
-
-            <div class="nivel bronze">
-                <div class="nivel-top">
-                    <h3>Bronze</h3>
-                    <span>0-499</span>
-                </div>
-                <div class="nivel-body">
-                    <p class="small">Desconto base</p>
-                    <h1>5%</h1>
-                    <p>Em todas as compras</p>
-                </div>
+    <!-- Níveis -->
+    <section class="niveis py-5 text-center text-white" style="background: url('../img/cafefundo.png') center/cover no-repeat; position: relative;">
+        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.7);"></div>
+        <div class="container position-relative">
+            <div class="niveis-header mb-5">
+                <h2>Níveis de Fidelidade</h2>
+                <p>Quanto mais você compra, mais benefícios você desbloqueia</p>
             </div>
+            <div class="row justify-content-center g-4">
 
-            <div class="nivel prata">
-                <div class="nivel-top">
-                    <h3>Prata</h3>
-                    <span>500-1499</span>
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="nivel bronze bg-white text-dark rounded-4 overflow-hidden">
+                        <div class="nivel-top p-4 text-white" style="background:#c76710;">
+                            <h3>Bronze</h3>
+                            <span>0-499</span>
+                        </div>
+                        <div class="nivel-body p-4">
+                            <p class="small">Desconto base</p>
+                            <h1>5%</h1>
+                            <p>Em todas as compras</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="nivel-body">
-                    <p class="small">Desconto base</p>
-                    <h1>10%</h1>
-                    <p>Em todas as compras</p>
+
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="nivel prata bg-white text-dark rounded-4 overflow-hidden">
+                        <div class="nivel-top p-4 text-white" style="background:#798497;">
+                            <h3>Prata</h3>
+                            <span>500-1499</span>
+                        </div>
+                        <div class="nivel-body p-4">
+                            <p class="small">Desconto base</p>
+                            <h1>10%</h1>
+                            <p>Em todas as compras</p>
+                        </div>
+                    </div>
                 </div>
+
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="nivel ouro bg-white text-dark rounded-4 overflow-hidden">
+                        <div class="nivel-top p-4 text-white" style="background:#f2c018;">
+                            <h3>Ouro</h3>
+                            <span>1500-2999</span>
+                        </div>
+                        <div class="nivel-body p-4">
+                            <p class="small">Desconto base</p>
+                            <h1>15%</h1>
+                            <p>Em todas as compras</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="nivel diamante bg-white text-dark rounded-4 overflow-hidden">
+                        <div class="nivel-top p-4 text-white" style="background:#22c5e1;">
+                            <h3>Diamante</h3>
+                            <span>3000+</span>
+                        </div>
+                        <div class="nivel-body p-4">
+                            <p class="small">Desconto base</p>
+                            <h1>20%</h1>
+                            <p>Em todas as compras</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-
-            <div class="nivel ouro">
-                <div class="nivel-top">
-                    <h3>Ouro</h3>
-                    <span>1500-2999</span>
-                </div>
-                <div class="nivel-body">
-                    <p class="small">Desconto base</p>
-                    <h1>15%</h1>
-                    <p>Em todas as compras</p>
-                </div>
-            </div>
-
-            <div class="nivel diamante">
-                <div class="nivel-top">
-                    <h3>Diamante</h3>
-                    <span>3000+</span>
-                </div>
-                <div class="nivel-body">
-                    <p class="small">Desconto base</p>
-                    <h1>20%</h1>
-                    <p>Em todas as compras</p>
-                </div>
-            </div>
-
         </div>
     </section>
 
-    
-    <section class="faq">
-        <div class="faq-container">
-            <h2>Perguntas Frequentes</h2>
+    <!-- FAQ -->
+    <section class="faq py-5 bg-white">
+        <div class="container">
+            <h2 class="text-center mb-5">Perguntas Frequentes</h2>
 
-            <div class="faq-item">
+            <div class="faq-item mb-3 p-4 bg-light rounded-4">
                 <h3>Os pontos expiram?</h3>
                 <p>Não! Seus pontos permanecem válidos enquanto você for nosso cliente ativo.</p>
             </div>
 
-            <div class="faq-item">
+            <div class="faq-item mb-3 p-4 bg-light rounded-4">
                 <h3>Posso usar mais de um voucher por compra?</h3>
                 <p>Cada voucher pode ser usado uma vez, mas você pode acumular vários vouchers para usar em compras diferentes.</p>
             </div>
 
-            <div class="faq-item">
+            <div class="faq-item mb-3 p-4 bg-light rounded-4">
                 <h3>Como resgato um voucher?</h3>
                 <p>Basta ir até a página de Recompensas, escolher o voucher desejado e clicar em Resgatar. Você receberá um código único.</p>
             </div>
@@ -172,5 +189,7 @@
         </div>
     </section>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
