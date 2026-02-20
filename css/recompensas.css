@@ -1,0 +1,159 @@
+body {
+    margin: 0;
+     font-family: 'Archivo Black', sans-serif;
+
+    
+    background-image: url("img\cafefundo.png") no-repeat center center fixed;
+
+    background-size: cover;
+}
+
+p {
+    color: white;
+}
+
+h3 {
+    color: white;
+}
+
+h2 {
+    color: white;
+}
+.rewards-container {
+    padding: 40px 60px;
+}
+
+span {
+    color: white;
+}
+/* NÍVEL */
+
+.nivel-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pontos h3 {
+    color: #f2a900;
+    font-size: 32px;
+}
+
+.restante {
+    text-align: right;
+    color: #ffffff;
+}
+
+/* BARRA */
+
+.progress-bar {
+    width: 100%;
+    height: 15px;
+    background: #eee;
+    border-radius: 20px;
+    margin: 20px 0 10px 0;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #cc6a00;
+    border-radius: 20px;
+}
+
+/* VOUCHERS */
+
+.vouchers {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.voucher-card {
+    width: 220px;
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 15px;
+    position: relative;
+    transition: 0.3s ease;
+    overflow: hidden;
+}
+
+.voucher-card:hover:not(.locked) {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* DISPONÍVEL */
+
+.green {
+    color: #4CAF50;
+}
+
+/* BLOQUEADO */
+
+.locked {
+    cursor: not-allowed;
+}
+
+.locked h4,
+.locked p,
+.locked span,
+.locked .badge {
+    filter: blur(2px);
+}
+
+.lock-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.6); /* branco transparente */
+    backdrop-filter: blur(3px); /* efeito vidro */
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.lock-icon {
+    font-size: 40px;
+    color: white;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* TOOLTIP */
+
+.locked::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.locked:hover::after {
+    opacity: 1;
+    bottom: -50px;
+}

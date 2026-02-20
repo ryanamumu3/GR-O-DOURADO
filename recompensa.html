@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recompensas</title>
+
+<link rel="stylesheet" href="css\style.css">
+<link rel="stylesheet" href="css\recompensas.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="nav-left">
+        <div class="nav-logo">
+            <img src="img/icone (2)/1-photoaidcom-cropped.png">
+        </div>
+        <a href="index.html" class="nav-item">Inicio</a>
+        <a href="recompensa.html" class="nav-item active">Recompensas</a>
+        <a href="historico.html" class="nav-item">Histórico</a>
+        <a href="comofunc.html" class="nav-item">Como funciona</a>
+    </div>
+    <div class="nav-right">
+        <div class="profile-icon">
+            <a href="login.html">
+                <img src="img/icone (2)/5.png">
+            </a>
+        </div>
+    </div>
+</nav>
+
+<section class="rewards-container">
+
+    <div class="nivel-box">
+        <div>
+            <span>Seu nível</span>
+            <h2>Bronze</h2>
+            <p>Próximo nível: Prata</p>
+        </div>
+
+        <div class="pontos">
+            <p>Pontos totais</p>
+            <h3>196</h3>
+        </div>
+    </div>
+
+    <div class="progress-bar">
+        <!-- 196 de 500 = 39% -->
+        <div class="progress-fill" style="width:39%;"></div>
+    </div>
+
+    <p class="restante">304 pontos restantes</p>
+
+    <h3>Vouchers Disponíveis</h3>
+
+    <div class="vouchers">
+
+        <!-- DISPONÍVEL -->
+        <div class="voucher-card">
+            <div class="badge">100%</div>
+            <h4>Café Grátis</h4>
+            <p>100 pontos necessários</p>
+            <span class="green">✓ Disponível</span>
+        </div>
+
+        <!-- BLOQUEADOS -->
+        <div class="voucher-card locked" data-tooltip="Você precisa de 200 pontos">
+            <div class="lock-overlay">
+                <span class="lock-icon">🔒</span>
+            </div>
+            <div class="badge">10%</div>
+            <h4>Desconto especial</h4>
+            <p>200 pontos necessários</p>
+            <span>Faltam 4 pontos</span>
+        </div>
+
+        <div class="voucher-card locked" data-tooltip="Você precisa de 400 pontos">
+            <div class="lock-overlay">
+                <span class="lock-icon">🔒</span>
+            </div>
+            <div class="badge">15%</div>
+            <h4>Combo 15% off</h4>
+            <p>400 pontos necessários</p>
+            <span>Faltam 204 pontos</span>
+        </div>
+
+        <div class="voucher-card locked" data-tooltip="Você precisa de 700 pontos">
+            <div class="lock-overlay">
+                <span class="lock-icon">🔒</span>
+            </div>
+            <div class="badge">20%</div>
+            <h4>Super Desconto</h4>
+            <p>700 pontos necessários</p>
+            <span>Faltam 504 pontos</span>
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>
