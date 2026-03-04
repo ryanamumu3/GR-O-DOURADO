@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Archivo Black', sans-serif;
     background: #f5f5f5;
 }
 
@@ -28,22 +28,38 @@ h1, h2, h3 {
     gap: 30px;
 }
 
-.nav-logo img {
-    width: 40px;
+.logo {
+    font-size: 24px;
+    color: #b8860b;
+    cursor: pointer;
 }
 
 .nav-item {
     text-decoration: none;
-    color: #000;
+    font-family: 'Archivo Black', sans-serif;
+    color: black;
     padding: 8px 20px;
     border-radius: 30px;
-    font-weight: 600;
     transition: 0.3s;
 }
 
-.nav-item:hover,
+.nav-item:hover {
+    background-color: #f2b705;
+}
+
 .nav-item.active {
-    background: #f2c018;
+    background-color: #f2b705;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
 }
 
 .profile-icon {
@@ -51,6 +67,7 @@ h1, h2, h3 {
     height: 40px;
     border-radius: 50%;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .profile-icon img {

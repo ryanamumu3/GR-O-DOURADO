@@ -173,7 +173,7 @@ body::before {
 
 .historico-hero {
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-    url("CAMINHO-IMAGEM-FUNDO.jpg");
+    url("img\cafefundo.png");
     background-size: cover;
     background-position: center;
     padding: 70px 20px;
