@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perfil do Usuário</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/usuario.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="user-container">
+    <h2>Perfil</h2>
+
+    <div class="info">
+        👤 Nome:
+        <span id="nome"></span>
+        <input type="text" id="inputNome">
+    </div>
+
+    <div class="info">
+        📧 Email:
+        <span id="email"></span>
+        <input type="email" id="inputEmail">
+    </div>
+
+    <div class="info">⭐ Pontos: <span id="pontos"></span></div>
+    <div class="info">🏆 Nível: <span id="nivel"></span></div>
+
+    <div class="botoes">
+        <button onclick="editar()">Editar</button>
+        <button onclick="salvar()" id="btnSalvar">Salvar</button>
+    </div>
+
+    <button class="logout" onclick="logout()">Sair</button>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+
+<script src="js/usuario.js"></script>
+
+</body>
+</html>
