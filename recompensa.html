@@ -5,17 +5,46 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Recompensas</title>
 
-<!-- CSS -->
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/recompensas.css">
 
-<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
-<!-- Font Awesome (para cadeado) -->
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<style>
+.popup{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    justify-content:center;
+    align-items:center;
+}
+
+.popup-content{
+    background:#fff;
+    padding:25px;
+    border-radius:10px;
+    text-align:center;
+    width:300px;
+}
+
+.popup-content button{
+    margin-top:15px;
+    padding:8px 15px;
+    border:none;
+    background:#000;
+    color:#fff;
+    cursor:pointer;
+    border-radius:5px;
+}
+</style>
 </head>
 
 <body>
@@ -69,9 +98,7 @@
             <h4>Café Grátis</h4>
             <p>100 pontos necessários</p>
             <span>Faltam pontos</span>
-            <div class="lock-overlay">
-                <i class="fas fa-lock lock-icon"></i>
-            </div>
+            <div class="lock-overlay"><i class="fas fa-lock"></i></div>
         </div>
 
         <div class="voucher-card locked">
@@ -79,9 +106,7 @@
             <h4>Desconto especial</h4>
             <p>200 pontos necessários</p>
             <span>Faltam pontos</span>
-            <div class="lock-overlay">
-                <i class="fas fa-lock lock-icon"></i>
-            </div>
+            <div class="lock-overlay"><i class="fas fa-lock"></i></div>
         </div>
 
         <div class="voucher-card locked">
@@ -89,9 +114,7 @@
             <h4>Combo 15% off</h4>
             <p>400 pontos necessários</p>
             <span>Faltam pontos</span>
-            <div class="lock-overlay">
-                <i class="fas fa-lock lock-icon"></i>
-            </div>
+            <div class="lock-overlay"><i class="fas fa-lock"></i></div>
         </div>
 
         <div class="voucher-card locked">
@@ -99,100 +122,25 @@
             <h4>Super Desconto</h4>
             <p>700 pontos necessários</p>
             <span>Faltam pontos</span>
-            <div class="lock-overlay">
-                <i class="fas fa-lock lock-icon"></i>
-            </div>
+            <div class="lock-overlay"><i class="fas fa-lock"></i></div>
         </div>
 
     </div>
 
 </section>
 
-<!-- SUPABASE -->
+<!-- POPUP -->
+<div id="popup-codigo" class="popup">
+    <div class="popup-content">
+        <h3 id="voucher-nome"></h3>
+        <p>Seu código:</p>
+        <h2 id="codigo-gerado"></h2>
+        <button onclick="fecharPopup()">Fechar</button>
+    </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-
-<!-- SCRIPT -->
-<script>
-const supabaseUrl = "https://qrgniyboqrxakxcxdbhy.supabase.co"
-const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFyZ25peWJvcXJ4YWt4Y3hkYmh5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM2NzgwMzMsImV4cCI6MjA4OTI1NDAzM30.jceQWl0tRLF5nwsXj7lu7cxwN1QDlbMkdSbHP6A10lw"
-
-const supabaseClient = window.supabase.createClient(supabaseUrl, supabaseKey)
-
-carregarPontos()
-
-async function carregarPontos(){
-    const usuario = JSON.parse(localStorage.getItem("usuario"))
-    if(!usuario){
-        window.location.href = "login.html"
-        return
-    }
-
-    const { data, error } = await supabaseClient
-        .from("compras")
-        .select("*")
-        .eq("usuario_id", usuario.id)
-
-    if(error){
-        console.log(error)
-        return
-    }
-
-    let pontos = 0
-    data.forEach(c => pontos += Number(c.pontos_ganhos))
-    document.getElementById("pontos").innerText = pontos
-
-    // Nível
-    let nivel = "Bronze", proximo = "Prata", meta = 500
-    if(pontos >= 500){ nivel="Prata"; proximo="Ouro"; meta=1000 }
-    if(pontos >= 1000){ nivel="Ouro"; proximo="Diamante"; meta=1500 }
-    if(pontos >= 1500){ nivel="Diamante"; proximo="Máximo"; meta=1500 }
-
-    document.getElementById("nivel").innerText = nivel
-    document.getElementById("proximo").innerText = "Próximo nível: " + proximo
-
-    // Barra
-    let porcentagem = (pontos / meta) * 100
-    if(porcentagem > 100) porcentagem = 100
-
-    const barra = document.getElementById("barra")
-    barra.style.width = porcentagem + "%"
-    if(nivel === "Bronze") barra.style.background = "#cd7f32"
-    if(nivel === "Prata")  barra.style.background = "#c0c0c0"
-    if(nivel === "Ouro")   barra.style.background = "#ffd700"
-    if(nivel === "Diamante") barra.style.background = "#00bfff"
-
-    // Restante
-    let restante = meta - pontos
-    if(restante < 0) restante = 0
-    document.getElementById("restante").innerText = restante + " pontos restantes"
-
-    // Vouchers
-    liberarVouchers(pontos)
-}
-
-function liberarVouchers(pontos){
-    const cards = document.querySelectorAll(".voucher-card")
-    const regras = [100, 200, 400, 700]
-
-    cards.forEach((card, index) => {
-        const span = card.querySelector("span")
-        const overlay = card.querySelector(".lock-overlay")
-
-        if(pontos >= regras[index]){
-            card.classList.remove("locked")
-            if(overlay) overlay.style.display = "none"
-            span.innerText = "✓ Disponível"
-            span.classList.add("green")
-        }else{
-            card.classList.add("locked")
-            if(overlay) overlay.style.display = "flex"
-            const faltam = regras[index] - pontos
-            span.innerText = `Faltam ${faltam} pontos`
-            span.classList.remove("green")
-        }
-    })
-}
-</script>
+<script src="js/recompensas.js"></script>
 
 </body>
 </html>
