@@ -289,3 +289,19 @@ body::before {
     color: #f2b705;
     font-size: 13px;
 }
+
+.popup-content{
+    background:#fff;
+    padding:25px;
+    border-radius:10px;
+    text-align:center;
+    width:300px;
+
+    color:#000; 
+}
+
+.popup-content h3,
+.popup-content p,
+.popup-content h2{
+    color:#000; 
+}

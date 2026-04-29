@@ -23,12 +23,10 @@ async function carregarPontos(){
         return
     }
 
-    // ===== SOMAR PONTOS =====
     let pontos = 0
     data.forEach(c => pontos += Number(c.pontos_ganhos))
     document.getElementById("pontos").innerText = pontos
 
-    // ===== NÍVEL =====
     let nivel = "Bronze"
     let proximo = "Prata"
     let meta = 500
@@ -52,29 +50,24 @@ async function carregarPontos(){
     document.getElementById("nivel").innerText = nivel
     document.getElementById("proximo").innerText = "Próximo nível: " + proximo
 
-    // ===== BARRA (PORCENTAGEM) =====
     let porcentagem = (pontos / meta) * 100
     if(porcentagem > 100) porcentagem = 100
 
     const barra = document.getElementById("barra")
     barra.style.width = porcentagem + "%"
 
-    // ===== COR DA BARRA =====
     if(nivel === "Bronze") barra.style.background = "#cd7f32"
     if(nivel === "Prata")  barra.style.background = "#c0c0c0"
     if(nivel === "Ouro")   barra.style.background = "#ffd700"
     if(nivel === "Diamante") barra.style.background = "#00bfff"
 
-    // ===== RESTANTE =====
     let restante = meta - pontos
     if(restante < 0) restante = 0
     document.getElementById("restante").innerText = restante + " pontos restantes"
 
-    // ===== VOUCHERS =====
     liberarVouchers(pontos)
 }
 
-// ===== VOUCHERS =====
 function liberarVouchers(pontos){
     const cards = document.querySelectorAll(".voucher-card")
     const regras = [100, 200, 400, 700]
@@ -85,15 +78,41 @@ function liberarVouchers(pontos){
 
         if(pontos >= regras[index]){
             card.classList.remove("locked")
-            if(overlay) overlay.style.display = "none" // remove overlay
+            if(overlay) overlay.style.display = "none"
             span.innerText = "✓ Disponível"
             span.classList.add("green")
         }else{
             card.classList.add("locked")
-            if(overlay) overlay.style.display = "flex" // mostra overlay
+            if(overlay) overlay.style.display = "flex"
             const faltam = regras[index] - pontos
             span.innerText = `Faltam ${faltam} pontos`
             span.classList.remove("green")
         }
     })
+
+    // ADICIONA CLIQUE NOS CARDS
+    cards.forEach(card => {
+        card.addEventListener("click", usarVoucher)
+    })
+}
+
+// ===== NOVA FUNÇÃO =====
+function usarVoucher(event){
+    const card = event.currentTarget
+
+    if(card.classList.contains("locked")){
+        return
+    }
+
+    const nome = card.querySelector("h4").innerText
+
+    const codigo = "CAFE-" + Math.random().toString(36).substring(2, 8).toUpperCase()
+
+    document.getElementById("voucher-nome").innerText = nome
+    document.getElementById("codigo-gerado").innerText = codigo
+    document.getElementById("popup-codigo").style.display = "flex"
+}
+
+function fecharPopup(){
+    document.getElementById("popup-codigo").style.display = "none"
 }
